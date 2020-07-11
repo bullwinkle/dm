@@ -1,0 +1,3191 @@
+{
+  "version": "1",
+  "projectGraph": {
+    "nodes": {
+      "maha-showroom-e2e": {
+        "name": "maha-showroom-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/maha-showroom-e2e",
+          "sourceRoot": "apps/maha-showroom-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/maha-showroom-e2e/cypress.json",
+                "tsConfig": "apps/maha-showroom-e2e/tsconfig.e2e.json",
+                "devServerTarget": "maha-showroom:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "maha-showroom:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/maha-showroom-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/maha-showroom-e2e/**/*"
+                ]
+              }
+            }
+          },
+          "tags": [
+            "type:e2e"
+          ],
+          "files": [
+            {
+              "file": "apps/maha-showroom-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1594423566052.8582
+            },
+            {
+              "file": "apps/maha-showroom-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1594423566053.0947
+            },
+            {
+              "file": "apps/maha-showroom-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566053.3423
+            },
+            {
+              "file": "apps/maha-showroom-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1594423566053.632
+            },
+            {
+              "file": "apps/maha-showroom-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1594423566053.8635
+            },
+            {
+              "file": "apps/maha-showroom-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1594423566054.0828
+            },
+            {
+              "file": "apps/maha-showroom-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1594423566054.2036
+            },
+            {
+              "file": "apps/maha-showroom-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1594423566054.3157
+            },
+            {
+              "file": "apps/maha-showroom-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1594423566054.4172
+            },
+            {
+              "file": "apps/maha-showroom-e2e/tslint.json",
+              "ext": ".json",
+              "mtime": 1594423566054.5557
+            }
+          ]
+        }
+      },
+      "maha-showroom-api": {
+        "name": "maha-showroom-api",
+        "type": "app",
+        "data": {
+          "root": "apps/maha-showroom-api",
+          "sourceRoot": "apps/maha-showroom-api/src",
+          "projectType": "application",
+          "prefix": "api",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/node:build",
+              "options": {
+                "outputPath": "dist/apps/maha-showroom-api",
+                "main": "apps/maha-showroom-api/src/main.ts",
+                "tsConfig": "apps/maha-showroom-api/tsconfig.app.json",
+                "assets": [
+                  "apps/maha-showroom-api/src/assets"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/maha-showroom-api/src/environments/environment.ts",
+                      "with": "apps/maha-showroom-api/src/environments/environment.prod.ts"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/node:execute",
+              "options": {
+                "buildTarget": "maha-showroom-api:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/maha-showroom-api/tsconfig.app.json",
+                  "apps/maha-showroom-api/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/maha-showroom-api/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/maha-showroom-api/jest.config.js",
+                "tsConfig": "apps/maha-showroom-api/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [
+            "type:app"
+          ],
+          "files": [
+            {
+              "file": "apps/maha-showroom-api/jest.config.js",
+              "ext": ".js",
+              "mtime": 1594423937039.4854
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/.gitkeep",
+              "ext": "",
+              "mtime": 1594423937040.7986
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/app.controller.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423937040.9768
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/app.controller.ts",
+              "ext": ".ts",
+              "mtime": 1594423937041.1445
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1594423937041.3132
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/app.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423937041.5583
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/app.service.ts",
+              "ext": ".ts",
+              "mtime": 1594423937041.7253
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/data/products-mock.json",
+              "ext": ".json",
+              "mtime": 1594423937042.1663
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/db-mongo-config.ts",
+              "ext": ".ts",
+              "mtime": 1594423937041.8887
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/models/user.model.ts",
+              "ext": ".ts",
+              "mtime": 1594423937042.4211
+            },
+            {
+              "file": "apps/maha-showroom-api/src/app/websockets/ws-controller.service.ts",
+              "ext": ".ts",
+              "mtime": 1594423937042.6616
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1594423937042.8328
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/beige+knit+cardigan+13.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937043.7703
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/black+backless+top+6.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937044.2903
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/black+crossover+knit+4.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937044.8271
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/black+linen+skirt+21.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937045.348
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/black+linen+skirt+9.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937045.959
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/black+silk+trousers+17.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937046.4214
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/black+silk+wrap+top+16.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937047.0054
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/brown+skirt+suit+13.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937047.7532
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/brown+velvet+top+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937048.5671
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/camel+leather+pantsuit+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937049.0925
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/champagne+silk+set+18.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937049.6077
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/comme+des+garcons+velvet+top+17.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937050.1895
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/copper+beaded+set+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937051.1226
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/cream+laced+jacket+2.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937051.8228
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/cream+slip+top+12.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937052.4836
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/donna+karan+3+piece+suit+11.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937053.1262
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/embellished+top+and+max+mara+pant+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937053.7654
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/fur+coat+25.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937054.6606
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/giorgio+armani+shorts+15.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937055.5928
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/gold+dries+blouse+18.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937055.9822
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/gold+metallic+sweater+2.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937057.5227
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/ivory+duster+and+pleated+trouser+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937057.9983
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/ivory+silk+tank+3.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937058.3313
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/linen+mini+dress+3.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937058.662
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/metallic+striped+button+down+3.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937058.987
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/peach+pleated+trousers+5.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937059.2722
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/polka+dot+blouse+12.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937059.6604
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/satin+slip+dress+18.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937060.539
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+dark+blue+duster+27.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937060.8555
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+lace+gown+11.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937061.1519
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+max+mara+blazer+10.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937061.7942
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+pale+yellow+top+19.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937062.3423
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+ruched+blouse+19.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937062.8975
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+sleeved+suit+2.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937063.5571
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+armani+trousers+2.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937064.274
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+button+down+4.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937064.8345
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+knit+tee+3.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937065.4158
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+mandarin+jacket+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937066.1255
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/slate+grey+giorgio+armani+suit+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937069.3928
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/sleeveless+linen+suit+4.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937070.4158
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/velvet+skirt+suit+3.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937071.2395
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/vest+9.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937071.6438
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/white+embroidered+blouse+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937072.038
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/white+lace+set+9.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937072.3958
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/white+skirt+suit+23.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937073.1074
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/white+tucked+blouse+13.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937073.4487
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/white+wrap+top+1.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937074.2256
+            },
+            {
+              "file": "apps/maha-showroom-api/src/assets/michaela_images/yeon+trench+11.jpg",
+              "ext": ".jpg",
+              "mtime": 1594423937075.6753
+            },
+            {
+              "file": "apps/maha-showroom-api/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1594423937076.0264
+            },
+            {
+              "file": "apps/maha-showroom-api/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1594423937076.2048
+            },
+            {
+              "file": "apps/maha-showroom-api/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1594423937040.5476
+            },
+            {
+              "file": "apps/maha-showroom-api/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1594423937039.7156
+            },
+            {
+              "file": "apps/maha-showroom-api/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1594423937039.8813
+            },
+            {
+              "file": "apps/maha-showroom-api/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1594423937040.0854
+            },
+            {
+              "file": "apps/maha-showroom-api/tslint.json",
+              "ext": ".json",
+              "mtime": 1594423937040.2703
+            }
+          ]
+        }
+      },
+      "api-interfaces": {
+        "name": "api-interfaces",
+        "type": "lib",
+        "data": {
+          "root": "libs/api-interfaces",
+          "sourceRoot": "libs/api-interfaces/src",
+          "projectType": "library",
+          "schematics": {},
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/api-interfaces/tsconfig.lib.json",
+                  "libs/api-interfaces/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/api-interfaces/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/api-interfaces/jest.config.js",
+                "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [
+            "type:types"
+          ],
+          "files": [
+            {
+              "file": "libs/api-interfaces/README.md",
+              "ext": ".md",
+              "mtime": 1594423566068.8254
+            },
+            {
+              "file": "libs/api-interfaces/jest.config.js",
+              "ext": ".js",
+              "mtime": 1594423566068.995
+            },
+            {
+              "file": "libs/api-interfaces/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1594423566069.1958
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
+              "ext": ".ts",
+              "mtime": 1594423566069.4048
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1594423566069.538
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1594423566069.6677
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1594423566069.821
+            },
+            {
+              "file": "libs/api-interfaces/tslint.json",
+              "ext": ".json",
+              "mtime": 1594423566070.0254
+            }
+          ]
+        }
+      },
+      "maha-showroom": {
+        "name": "maha-showroom",
+        "type": "app",
+        "data": {
+          "projectType": "application",
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "root": "apps/maha-showroom",
+          "sourceRoot": "apps/maha-showroom/src",
+          "prefix": "dm",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist/apps/maha-showroom/maha-showroom",
+                "baseHref": "/dm-public/maha-showroom/",
+                "index": "apps/maha-showroom/src/index.html",
+                "main": "apps/maha-showroom/src/main.ts",
+                "polyfills": "apps/maha-showroom/src/polyfills.ts",
+                "tsConfig": "apps/maha-showroom/tsconfig.app.json",
+                "aot": true,
+                "assets": [
+                  "apps/maha-showroom/src/favicon.ico",
+                  "apps/maha-showroom/src/assets"
+                ],
+                "styles": [
+                  "apps/maha-showroom/src/styles.scss"
+                ],
+                "scripts": []
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/maha-showroom/src/environments/environment.ts",
+                      "with": "apps/maha-showroom/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "optimization": true,
+                  "outputHashing": "all",
+                  "sourceMap": false,
+                  "extractCss": true,
+                  "namedChunks": false,
+                  "extractLicenses": true,
+                  "vendorChunk": false,
+                  "buildOptimizer": true,
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                "browserTarget": "maha-showroom:build",
+                "proxyConfig": "apps/maha-showroom/proxy.conf.json"
+              },
+              "configurations": {
+                "production": {
+                  "browserTarget": "maha-showroom:build:production"
+                }
+              }
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "maha-showroom:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/maha-showroom/tsconfig.app.json",
+                  "apps/maha-showroom/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/maha-showroom/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/maha-showroom/jest.config.js",
+                "tsConfig": "apps/maha-showroom/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/maha-showroom/src/test-setup.ts"
+              }
+            },
+            "deploy": {
+              "builder": "angular-cli-ghpages:deploy",
+              "options": {
+                "repo": "https://github.com/bullwinkle/dm-public.git",
+                "branch": "master",
+                "noSilent": true
+              }
+            }
+          },
+          "tags": [
+            "type:app"
+          ],
+          "files": [
+            {
+              "file": "apps/maha-showroom/browserslist",
+              "ext": "",
+              "mtime": 1594423566054.7996
+            },
+            {
+              "file": "apps/maha-showroom/jest.config.js",
+              "ext": ".js",
+              "mtime": 1594423566054.9797
+            },
+            {
+              "file": "apps/maha-showroom/proxy.conf.json",
+              "ext": ".json",
+              "mtime": 1594423566055.1072
+            },
+            {
+              "file": "apps/maha-showroom/src/app/address-form/address-form.component.css",
+              "ext": ".css",
+              "mtime": 1594423566055.3862
+            },
+            {
+              "file": "apps/maha-showroom/src/app/address-form/address-form.component.html",
+              "ext": ".html",
+              "mtime": 1594423566055.5405
+            },
+            {
+              "file": "apps/maha-showroom/src/app/address-form/address-form.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566055.8115
+            },
+            {
+              "file": "apps/maha-showroom/src/app/address-form/address-form.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566056.052
+            },
+            {
+              "file": "apps/maha-showroom/src/app/app-routing.module.ts",
+              "ext": ".ts",
+              "mtime": 1594423566056.3267
+            },
+            {
+              "file": "apps/maha-showroom/src/app/app.component.html",
+              "ext": ".html",
+              "mtime": 1594423566056.538
+            },
+            {
+              "file": "apps/maha-showroom/src/app/app.component.scss",
+              "ext": ".scss",
+              "mtime": 1594423566056.6143
+            },
+            {
+              "file": "apps/maha-showroom/src/app/app.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566057.284
+            },
+            {
+              "file": "apps/maha-showroom/src/app/app.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566057.821
+            },
+            {
+              "file": "apps/maha-showroom/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1594423566058.09
+            },
+            {
+              "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.css",
+              "ext": ".css",
+              "mtime": 1594423566058.2937
+            },
+            {
+              "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.html",
+              "ext": ".html",
+              "mtime": 1594423566058.4387
+            },
+            {
+              "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566058.6587
+            },
+            {
+              "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566058.8882
+            },
+            {
+              "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.css",
+              "ext": ".css",
+              "mtime": 1594423566059.1284
+            },
+            {
+              "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.html",
+              "ext": ".html",
+              "mtime": 1594423566059.3247
+            },
+            {
+              "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566059.575
+            },
+            {
+              "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566059.8264
+            },
+            {
+              "file": "apps/maha-showroom/src/app/layout/layout.component.html",
+              "ext": ".html",
+              "mtime": 1594423566060.1958
+            },
+            {
+              "file": "apps/maha-showroom/src/app/layout/layout.component.scss",
+              "ext": ".scss",
+              "mtime": 1594423566060.3933
+            },
+            {
+              "file": "apps/maha-showroom/src/app/layout/layout.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566060.7668
+            },
+            {
+              "file": "apps/maha-showroom/src/app/layout/layout.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566061.0288
+            },
+            {
+              "file": "apps/maha-showroom/src/app/navigation/navigation.component.css",
+              "ext": ".css",
+              "mtime": 1594423566061.352
+            },
+            {
+              "file": "apps/maha-showroom/src/app/navigation/navigation.component.html",
+              "ext": ".html",
+              "mtime": 1594423566061.5762
+            },
+            {
+              "file": "apps/maha-showroom/src/app/navigation/navigation.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566061.8223
+            },
+            {
+              "file": "apps/maha-showroom/src/app/navigation/navigation.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566062.0508
+            },
+            {
+              "file": "apps/maha-showroom/src/app/palette/palette.component.html",
+              "ext": ".html",
+              "mtime": 1594423566062.3315
+            },
+            {
+              "file": "apps/maha-showroom/src/app/palette/palette.component.scss",
+              "ext": ".scss",
+              "mtime": 1594423566062.4734
+            },
+            {
+              "file": "apps/maha-showroom/src/app/palette/palette.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566062.7048
+            },
+            {
+              "file": "apps/maha-showroom/src/app/palette/palette.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566062.9172
+            },
+            {
+              "file": "apps/maha-showroom/src/app/products/products.component.html",
+              "ext": ".html",
+              "mtime": 1594423566063.155
+            },
+            {
+              "file": "apps/maha-showroom/src/app/products/products.component.scss",
+              "ext": ".scss",
+              "mtime": 1594423566063.2883
+            },
+            {
+              "file": "apps/maha-showroom/src/app/products/products.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566063.4905
+            },
+            {
+              "file": "apps/maha-showroom/src/app/products/products.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566063.6694
+            },
+            {
+              "file": "apps/maha-showroom/src/app/services/theme.service.ts",
+              "ext": ".ts",
+              "mtime": 1594423566063.9392
+            },
+            {
+              "file": "apps/maha-showroom/src/app/table/table-datasource.ts",
+              "ext": ".ts",
+              "mtime": 1594423566064.2227
+            },
+            {
+              "file": "apps/maha-showroom/src/app/table/table.component.css",
+              "ext": ".css",
+              "mtime": 1594423566064.358
+            },
+            {
+              "file": "apps/maha-showroom/src/app/table/table.component.html",
+              "ext": ".html",
+              "mtime": 1594423566064.5952
+            },
+            {
+              "file": "apps/maha-showroom/src/app/table/table.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566064.9172
+            },
+            {
+              "file": "apps/maha-showroom/src/app/table/table.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566065.1562
+            },
+            {
+              "file": "apps/maha-showroom/src/app/tree/example-data.ts",
+              "ext": ".ts",
+              "mtime": 1594423566065.4402
+            },
+            {
+              "file": "apps/maha-showroom/src/app/tree/tree.component.css",
+              "ext": ".css",
+              "mtime": 1594423566065.5667
+            },
+            {
+              "file": "apps/maha-showroom/src/app/tree/tree.component.html",
+              "ext": ".html",
+              "mtime": 1594423566065.702
+            },
+            {
+              "file": "apps/maha-showroom/src/app/tree/tree.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566065.9216
+            },
+            {
+              "file": "apps/maha-showroom/src/app/tree/tree.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566066.1511
+            },
+            {
+              "file": "apps/maha-showroom/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1594423566066.341
+            },
+            {
+              "file": "apps/maha-showroom/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1594423566066.5698
+            },
+            {
+              "file": "apps/maha-showroom/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1594423566066.7244
+            },
+            {
+              "file": "apps/maha-showroom/src/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1594423566066.9116
+            },
+            {
+              "file": "apps/maha-showroom/src/index.html",
+              "ext": ".html",
+              "mtime": 1594423566067.0518
+            },
+            {
+              "file": "apps/maha-showroom/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1594423566067.1968
+            },
+            {
+              "file": "apps/maha-showroom/src/polyfills.ts",
+              "ext": ".ts",
+              "mtime": 1594424988452.7712
+            },
+            {
+              "file": "apps/maha-showroom/src/styles.scss",
+              "ext": ".scss",
+              "mtime": 1594423566067.6213
+            },
+            {
+              "file": "apps/maha-showroom/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1594424939511.0654
+            },
+            {
+              "file": "apps/maha-showroom/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1594423566067.8787
+            },
+            {
+              "file": "apps/maha-showroom/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1594423566067.9875
+            },
+            {
+              "file": "apps/maha-showroom/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1594423566068.1
+            },
+            {
+              "file": "apps/maha-showroom/tslint.json",
+              "ext": ".json",
+              "mtime": 1594423566068.2134
+            }
+          ]
+        }
+      },
+      "ipoop-e2e": {
+        "name": "ipoop-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/ipoop-e2e",
+          "sourceRoot": "apps/ipoop-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/ipoop-e2e/cypress.json",
+                "tsConfig": "apps/ipoop-e2e/tsconfig.e2e.json",
+                "devServerTarget": "ipoop:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "ipoop:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/ipoop-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/ipoop-e2e/**/*"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/ipoop-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1594423566045.831
+            },
+            {
+              "file": "apps/ipoop-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1594423566046.0535
+            },
+            {
+              "file": "apps/ipoop-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566046.273
+            },
+            {
+              "file": "apps/ipoop-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1594423566046.5884
+            },
+            {
+              "file": "apps/ipoop-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1594423566046.798
+            },
+            {
+              "file": "apps/ipoop-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1594423566047.424
+            },
+            {
+              "file": "apps/ipoop-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1594423566047.6213
+            },
+            {
+              "file": "apps/ipoop-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1594423566047.7861
+            },
+            {
+              "file": "apps/ipoop-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1594423566048.002
+            },
+            {
+              "file": "apps/ipoop-e2e/tslint.json",
+              "ext": ".json",
+              "mtime": 1594423566048.1863
+            }
+          ]
+        }
+      },
+      "ipoop-api": {
+        "name": "ipoop-api",
+        "type": "app",
+        "data": {
+          "root": "apps/ipoop-api",
+          "sourceRoot": "apps/ipoop-api/src",
+          "projectType": "application",
+          "prefix": "ipoop-api",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/node:build",
+              "options": {
+                "outputPath": "dist/apps/ipoop-api",
+                "main": "apps/ipoop-api/src/main.ts",
+                "tsConfig": "apps/ipoop-api/tsconfig.app.json",
+                "assets": [
+                  "apps/ipoop-api/src/assets"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/ipoop-api/src/environments/environment.ts",
+                      "with": "apps/ipoop-api/src/environments/environment.prod.ts"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/node:execute",
+              "options": {
+                "buildTarget": "ipoop-api:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/ipoop-api/tsconfig.app.json",
+                  "apps/ipoop-api/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/ipoop-api/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/ipoop-api/jest.config.js",
+                "tsConfig": "apps/ipoop-api/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/ipoop-api/jest.config.js",
+              "ext": ".js",
+              "mtime": 1594424496653.3843
+            },
+            {
+              "file": "apps/ipoop-api/src/app/.gitkeep",
+              "ext": "",
+              "mtime": 1594424496652.5454
+            },
+            {
+              "file": "apps/ipoop-api/src/app/app.controller.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594424496653.9976
+            },
+            {
+              "file": "apps/ipoop-api/src/app/app.controller.ts",
+              "ext": ".ts",
+              "mtime": 1594424496654.1616
+            },
+            {
+              "file": "apps/ipoop-api/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1594424496654.3303
+            },
+            {
+              "file": "apps/ipoop-api/src/app/app.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594424496654.6084
+            },
+            {
+              "file": "apps/ipoop-api/src/app/app.service.ts",
+              "ext": ".ts",
+              "mtime": 1594424496654.884
+            },
+            {
+              "file": "apps/ipoop-api/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1594424496652.7185
+            },
+            {
+              "file": "apps/ipoop-api/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1594424496652.9573
+            },
+            {
+              "file": "apps/ipoop-api/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1594424496653.175
+            },
+            {
+              "file": "apps/ipoop-api/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1594424496652.287
+            },
+            {
+              "file": "apps/ipoop-api/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1594424496651.802
+            },
+            {
+              "file": "apps/ipoop-api/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1594424496652.0286
+            },
+            {
+              "file": "apps/ipoop-api/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1594424496653.6008
+            },
+            {
+              "file": "apps/ipoop-api/tslint.json",
+              "ext": ".json",
+              "mtime": 1594424496651.5388
+            }
+          ]
+        }
+      },
+      "ipoop": {
+        "name": "ipoop",
+        "type": "app",
+        "data": {
+          "projectType": "application",
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "root": "apps/ipoop",
+          "sourceRoot": "apps/ipoop/src",
+          "prefix": "dm",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist/apps/ipoop",
+                "index": "apps/ipoop/src/index.html",
+                "main": "apps/ipoop/src/main.ts",
+                "polyfills": "apps/ipoop/src/polyfills.ts",
+                "tsConfig": "apps/ipoop/tsconfig.app.json",
+                "aot": true,
+                "assets": [
+                  "apps/ipoop/src/favicon.ico",
+                  "apps/ipoop/src/assets"
+                ],
+                "styles": [
+                  "apps/ipoop/src/styles.scss"
+                ],
+                "scripts": []
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/ipoop/src/environments/environment.ts",
+                      "with": "apps/ipoop/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "optimization": true,
+                  "outputHashing": "all",
+                  "sourceMap": false,
+                  "extractCss": true,
+                  "namedChunks": false,
+                  "extractLicenses": true,
+                  "vendorChunk": false,
+                  "buildOptimizer": true,
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                "browserTarget": "ipoop:build",
+                "port": 4201,
+                "proxyConfig": "apps/ipoop/proxy.conf.json"
+              },
+              "configurations": {
+                "production": {
+                  "browserTarget": "ipoop:build:production"
+                }
+              }
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "ipoop:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/ipoop/tsconfig.app.json",
+                  "apps/ipoop/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/ipoop/**/*"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/ipoop/jest.config.js",
+                "tsConfig": "apps/ipoop/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/ipoop/src/test-setup.ts"
+              }
+            },
+            "deploy": {
+              "builder": "angular-cli-ghpages:deploy",
+              "options": {
+                "repo": "https://github.com/bullwinkle/dm-public.git",
+                "branch": "master",
+                "noSilent": true,
+                "baseHref": "/dm-public/ipoop/"
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/ipoop/browserslist",
+              "ext": "",
+              "mtime": 1594423566048.4717
+            },
+            {
+              "file": "apps/ipoop/jest.config.js",
+              "ext": ".js",
+              "mtime": 1594423566048.7517
+            },
+            {
+              "file": "apps/ipoop/proxy.conf.json",
+              "ext": ".json",
+              "mtime": 1594424496653.8242
+            },
+            {
+              "file": "apps/ipoop/src/app/app.component.html",
+              "ext": ".html",
+              "mtime": 1594423566049.2493
+            },
+            {
+              "file": "apps/ipoop/src/app/app.component.scss",
+              "ext": ".scss",
+              "mtime": 1594423566049.4463
+            },
+            {
+              "file": "apps/ipoop/src/app/app.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1594423566049.6543
+            },
+            {
+              "file": "apps/ipoop/src/app/app.component.ts",
+              "ext": ".ts",
+              "mtime": 1594423566049.8901
+            },
+            {
+              "file": "apps/ipoop/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1594423566050.1174
+            },
+            {
+              "file": "apps/ipoop/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1594423566050.269
+            },
+            {
+              "file": "apps/ipoop/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1594423566050.5085
+            },
+            {
+              "file": "apps/ipoop/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1594423566050.6765
+            },
+            {
+              "file": "apps/ipoop/src/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1594423566050.9429
+            },
+            {
+              "file": "apps/ipoop/src/index.html",
+              "ext": ".html",
+              "mtime": 1594423566051.2207
+            },
+            {
+              "file": "apps/ipoop/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1594423566051.4705
+            },
+            {
+              "file": "apps/ipoop/src/polyfills.ts",
+              "ext": ".ts",
+              "mtime": 1594423566051.617
+            },
+            {
+              "file": "apps/ipoop/src/styles.scss",
+              "ext": ".scss",
+              "mtime": 1594423566051.7764
+            },
+            {
+              "file": "apps/ipoop/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1594423566051.915
+            },
+            {
+              "file": "apps/ipoop/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1594423566052.123
+            },
+            {
+              "file": "apps/ipoop/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1594423566052.2969
+            },
+            {
+              "file": "apps/ipoop/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1594423566052.4556
+            },
+            {
+              "file": "apps/ipoop/tslint.json",
+              "ext": ".json",
+              "mtime": 1594423566052.6216
+            }
+          ]
+        }
+      },
+      "npm:@angular/animations": {
+        "type": "npm",
+        "name": "npm:@angular/animations",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/animations",
+          "files": []
+        }
+      },
+      "npm:@angular/cdk": {
+        "type": "npm",
+        "name": "npm:@angular/cdk",
+        "data": {
+          "version": "^10.0.1",
+          "packageName": "@angular/cdk",
+          "files": []
+        }
+      },
+      "npm:@angular/common": {
+        "type": "npm",
+        "name": "npm:@angular/common",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/common",
+          "files": []
+        }
+      },
+      "npm:@angular/compiler": {
+        "type": "npm",
+        "name": "npm:@angular/compiler",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/compiler",
+          "files": []
+        }
+      },
+      "npm:@angular/core": {
+        "type": "npm",
+        "name": "npm:@angular/core",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/core",
+          "files": []
+        }
+      },
+      "npm:@angular/forms": {
+        "type": "npm",
+        "name": "npm:@angular/forms",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/forms",
+          "files": []
+        }
+      },
+      "npm:@angular/material": {
+        "type": "npm",
+        "name": "npm:@angular/material",
+        "data": {
+          "version": "^10.0.1",
+          "packageName": "@angular/material",
+          "files": []
+        }
+      },
+      "npm:@angular/platform-browser": {
+        "type": "npm",
+        "name": "npm:@angular/platform-browser",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/platform-browser",
+          "files": []
+        }
+      },
+      "npm:@angular/platform-browser-dynamic": {
+        "type": "npm",
+        "name": "npm:@angular/platform-browser-dynamic",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/platform-browser-dynamic",
+          "files": []
+        }
+      },
+      "npm:@angular/router": {
+        "type": "npm",
+        "name": "npm:@angular/router",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/router",
+          "files": []
+        }
+      },
+      "npm:@nestjs/common": {
+        "type": "npm",
+        "name": "npm:@nestjs/common",
+        "data": {
+          "version": "^7.3.1",
+          "packageName": "@nestjs/common",
+          "files": []
+        }
+      },
+      "npm:@nestjs/core": {
+        "type": "npm",
+        "name": "npm:@nestjs/core",
+        "data": {
+          "version": "^7.3.1",
+          "packageName": "@nestjs/core",
+          "files": []
+        }
+      },
+      "npm:@nestjs/platform-express": {
+        "type": "npm",
+        "name": "npm:@nestjs/platform-express",
+        "data": {
+          "version": "^7.3.1",
+          "packageName": "@nestjs/platform-express",
+          "files": []
+        }
+      },
+      "npm:@nestjs/platform-socket.io": {
+        "type": "npm",
+        "name": "npm:@nestjs/platform-socket.io",
+        "data": {
+          "version": "^7.3.1",
+          "packageName": "@nestjs/platform-socket.io",
+          "files": []
+        }
+      },
+      "npm:@nestjs/serve-static": {
+        "type": "npm",
+        "name": "npm:@nestjs/serve-static",
+        "data": {
+          "version": "^2.1.3",
+          "packageName": "@nestjs/serve-static",
+          "files": []
+        }
+      },
+      "npm:@nestjs/typeorm": {
+        "type": "npm",
+        "name": "npm:@nestjs/typeorm",
+        "data": {
+          "version": "^7.1.0",
+          "packageName": "@nestjs/typeorm",
+          "files": []
+        }
+      },
+      "npm:@nestjs/websockets": {
+        "type": "npm",
+        "name": "npm:@nestjs/websockets",
+        "data": {
+          "version": "^7.3.1",
+          "packageName": "@nestjs/websockets",
+          "files": []
+        }
+      },
+      "npm:@ngneat/until-destroy": {
+        "type": "npm",
+        "name": "npm:@ngneat/until-destroy",
+        "data": {
+          "version": "^7.3.0",
+          "packageName": "@ngneat/until-destroy",
+          "files": []
+        }
+      },
+      "npm:class-transformer": {
+        "type": "npm",
+        "name": "npm:class-transformer",
+        "data": {
+          "version": "^0.2.3",
+          "packageName": "class-transformer",
+          "files": []
+        }
+      },
+      "npm:classlist.js": {
+        "type": "npm",
+        "name": "npm:classlist.js",
+        "data": {
+          "version": "^1.1.20150312",
+          "packageName": "classlist.js",
+          "files": []
+        }
+      },
+      "npm:mongodb": {
+        "type": "npm",
+        "name": "npm:mongodb",
+        "data": {
+          "version": "^3.5.9",
+          "packageName": "mongodb",
+          "files": []
+        }
+      },
+      "npm:reflect-metadata": {
+        "type": "npm",
+        "name": "npm:reflect-metadata",
+        "data": {
+          "version": "^0.1.13",
+          "packageName": "reflect-metadata",
+          "files": []
+        }
+      },
+      "npm:rxjs": {
+        "type": "npm",
+        "name": "npm:rxjs",
+        "data": {
+          "version": "~6.6.0",
+          "packageName": "rxjs",
+          "files": []
+        }
+      },
+      "npm:socket.io-client": {
+        "type": "npm",
+        "name": "npm:socket.io-client",
+        "data": {
+          "version": "^2.3.0",
+          "packageName": "socket.io-client",
+          "files": []
+        }
+      },
+      "npm:typeorm": {
+        "type": "npm",
+        "name": "npm:typeorm",
+        "data": {
+          "version": "^0.2.25",
+          "packageName": "typeorm",
+          "files": []
+        }
+      },
+      "npm:web-animations-js": {
+        "type": "npm",
+        "name": "npm:web-animations-js",
+        "data": {
+          "version": "^2.3.2",
+          "packageName": "web-animations-js",
+          "files": []
+        }
+      },
+      "npm:zone.js": {
+        "type": "npm",
+        "name": "npm:zone.js",
+        "data": {
+          "version": "^0.10.2",
+          "packageName": "zone.js",
+          "files": []
+        }
+      },
+      "npm:@angular-devkit/build-angular": {
+        "type": "npm",
+        "name": "npm:@angular-devkit/build-angular",
+        "data": {
+          "version": "^0.1000.1",
+          "packageName": "@angular-devkit/build-angular",
+          "files": []
+        }
+      },
+      "npm:@angular/cli": {
+        "type": "npm",
+        "name": "npm:@angular/cli",
+        "data": {
+          "version": "10.0.1",
+          "packageName": "@angular/cli",
+          "files": []
+        }
+      },
+      "npm:@angular/compiler-cli": {
+        "type": "npm",
+        "name": "npm:@angular/compiler-cli",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/compiler-cli",
+          "files": []
+        }
+      },
+      "npm:@angular/language-service": {
+        "type": "npm",
+        "name": "npm:@angular/language-service",
+        "data": {
+          "version": "^10.0.2",
+          "packageName": "@angular/language-service",
+          "files": []
+        }
+      },
+      "npm:@nestjs/schematics": {
+        "type": "npm",
+        "name": "npm:@nestjs/schematics",
+        "data": {
+          "version": "^7.0.1",
+          "packageName": "@nestjs/schematics",
+          "files": []
+        }
+      },
+      "npm:@nestjs/testing": {
+        "type": "npm",
+        "name": "npm:@nestjs/testing",
+        "data": {
+          "version": "^7.3.1",
+          "packageName": "@nestjs/testing",
+          "files": []
+        }
+      },
+      "npm:@nrwl/angular": {
+        "type": "npm",
+        "name": "npm:@nrwl/angular",
+        "data": {
+          "version": "9.5.1",
+          "packageName": "@nrwl/angular",
+          "files": []
+        }
+      },
+      "npm:@nrwl/cypress": {
+        "type": "npm",
+        "name": "npm:@nrwl/cypress",
+        "data": {
+          "version": "9.5.1",
+          "packageName": "@nrwl/cypress",
+          "files": []
+        }
+      },
+      "npm:@nrwl/jest": {
+        "type": "npm",
+        "name": "npm:@nrwl/jest",
+        "data": {
+          "version": "9.5.1",
+          "packageName": "@nrwl/jest",
+          "files": []
+        }
+      },
+      "npm:@nrwl/nest": {
+        "type": "npm",
+        "name": "npm:@nrwl/nest",
+        "data": {
+          "version": "9.5.1",
+          "packageName": "@nrwl/nest",
+          "files": []
+        }
+      },
+      "npm:@nrwl/node": {
+        "type": "npm",
+        "name": "npm:@nrwl/node",
+        "data": {
+          "version": "9.5.1",
+          "packageName": "@nrwl/node",
+          "files": []
+        }
+      },
+      "npm:@nrwl/workspace": {
+        "type": "npm",
+        "name": "npm:@nrwl/workspace",
+        "data": {
+          "version": "9.5.1",
+          "packageName": "@nrwl/workspace",
+          "files": []
+        }
+      },
+      "npm:@types/jest": {
+        "type": "npm",
+        "name": "npm:@types/jest",
+        "data": {
+          "version": "26.0.3",
+          "packageName": "@types/jest",
+          "files": []
+        }
+      },
+      "npm:@types/node": {
+        "type": "npm",
+        "name": "npm:@types/node",
+        "data": {
+          "version": "~14.0.14",
+          "packageName": "@types/node",
+          "files": []
+        }
+      },
+      "npm:@types/socket.io": {
+        "type": "npm",
+        "name": "npm:@types/socket.io",
+        "data": {
+          "version": "^2.1.8",
+          "packageName": "@types/socket.io",
+          "files": []
+        }
+      },
+      "npm:angular-cli-ghpages": {
+        "type": "npm",
+        "name": "npm:angular-cli-ghpages",
+        "data": {
+          "version": "^0.6.2",
+          "packageName": "angular-cli-ghpages",
+          "files": []
+        }
+      },
+      "npm:codelyzer": {
+        "type": "npm",
+        "name": "npm:codelyzer",
+        "data": {
+          "version": "^6.0.0",
+          "packageName": "codelyzer",
+          "files": []
+        }
+      },
+      "npm:cypress": {
+        "type": "npm",
+        "name": "npm:cypress",
+        "data": {
+          "version": "^4.9.0",
+          "packageName": "cypress",
+          "files": []
+        }
+      },
+      "npm:dotenv": {
+        "type": "npm",
+        "name": "npm:dotenv",
+        "data": {
+          "version": "8.2.0",
+          "packageName": "dotenv",
+          "files": []
+        }
+      },
+      "npm:eslint": {
+        "type": "npm",
+        "name": "npm:eslint",
+        "data": {
+          "version": "7.3.1",
+          "packageName": "eslint",
+          "files": []
+        }
+      },
+      "npm:jest": {
+        "type": "npm",
+        "name": "npm:jest",
+        "data": {
+          "version": "26.1.0",
+          "packageName": "jest",
+          "files": []
+        }
+      },
+      "npm:jest-preset-angular": {
+        "type": "npm",
+        "name": "npm:jest-preset-angular",
+        "data": {
+          "version": "8.2.1",
+          "packageName": "jest-preset-angular",
+          "files": []
+        }
+      },
+      "npm:prettier": {
+        "type": "npm",
+        "name": "npm:prettier",
+        "data": {
+          "version": "2.0.5",
+          "packageName": "prettier",
+          "files": []
+        }
+      },
+      "npm:ts-jest": {
+        "type": "npm",
+        "name": "npm:ts-jest",
+        "data": {
+          "version": "^26.1.1",
+          "packageName": "ts-jest",
+          "files": []
+        }
+      },
+      "npm:ts-node": {
+        "type": "npm",
+        "name": "npm:ts-node",
+        "data": {
+          "version": "~8.10.2",
+          "packageName": "ts-node",
+          "files": []
+        }
+      },
+      "npm:tslib": {
+        "type": "npm",
+        "name": "npm:tslib",
+        "data": {
+          "version": "^1.10.0",
+          "packageName": "tslib",
+          "files": []
+        }
+      },
+      "npm:tslint": {
+        "type": "npm",
+        "name": "npm:tslint",
+        "data": {
+          "version": "~6.1.0",
+          "packageName": "tslint",
+          "files": []
+        }
+      },
+      "npm:typescript": {
+        "type": "npm",
+        "name": "npm:typescript",
+        "data": {
+          "version": "~3.9.6",
+          "packageName": "typescript",
+          "files": []
+        }
+      }
+    },
+    "dependencies": {
+      "maha-showroom-e2e": [
+        {
+          "type": "implicit",
+          "source": "maha-showroom-e2e",
+          "target": "maha-showroom"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-e2e",
+          "target": "npm:@nrwl/cypress"
+        }
+      ],
+      "maha-showroom-api": [
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:@nestjs/testing"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:@nestjs/common"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:@nestjs/serve-static"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:@nestjs/typeorm"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:class-transformer"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:typeorm"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:@nestjs/websockets"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:rxjs"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom-api",
+          "target": "npm:@nestjs/core"
+        }
+      ],
+      "api-interfaces": [],
+      "maha-showroom": [
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/forms"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/material"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/router"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@ngneat/until-destroy"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/cdk"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:rxjs"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:socket.io-client"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:classlist.js"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:zone.js"
+        },
+        {
+          "type": "static",
+          "source": "maha-showroom",
+          "target": "npm:jest-preset-angular"
+        }
+      ],
+      "ipoop-e2e": [
+        {
+          "type": "implicit",
+          "source": "ipoop-e2e",
+          "target": "ipoop"
+        },
+        {
+          "type": "static",
+          "source": "ipoop-e2e",
+          "target": "npm:@nrwl/cypress"
+        }
+      ],
+      "ipoop-api": [
+        {
+          "type": "static",
+          "source": "ipoop-api",
+          "target": "npm:@nestjs/testing"
+        },
+        {
+          "type": "static",
+          "source": "ipoop-api",
+          "target": "npm:@nestjs/common"
+        },
+        {
+          "type": "static",
+          "source": "ipoop-api",
+          "target": "npm:@nestjs/core"
+        }
+      ],
+      "ipoop": [
+        {
+          "type": "static",
+          "source": "ipoop",
+          "target": "npm:@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "ipoop",
+          "target": "npm:@angular/router"
+        },
+        {
+          "type": "static",
+          "source": "ipoop",
+          "target": "npm:@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "ipoop",
+          "target": "npm:@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "ipoop",
+          "target": "npm:zone.js"
+        },
+        {
+          "type": "static",
+          "source": "ipoop",
+          "target": "npm:jest-preset-angular"
+        }
+      ],
+      "npm:@angular/animations": [],
+      "npm:@angular/cdk": [],
+      "npm:@angular/common": [],
+      "npm:@angular/compiler": [],
+      "npm:@angular/core": [],
+      "npm:@angular/forms": [],
+      "npm:@angular/material": [],
+      "npm:@angular/platform-browser": [],
+      "npm:@angular/platform-browser-dynamic": [],
+      "npm:@angular/router": [],
+      "npm:@nestjs/common": [],
+      "npm:@nestjs/core": [],
+      "npm:@nestjs/platform-express": [],
+      "npm:@nestjs/platform-socket.io": [],
+      "npm:@nestjs/serve-static": [],
+      "npm:@nestjs/typeorm": [],
+      "npm:@nestjs/websockets": [],
+      "npm:@ngneat/until-destroy": [],
+      "npm:class-transformer": [],
+      "npm:classlist.js": [],
+      "npm:mongodb": [],
+      "npm:reflect-metadata": [],
+      "npm:rxjs": [],
+      "npm:socket.io-client": [],
+      "npm:typeorm": [],
+      "npm:web-animations-js": [],
+      "npm:zone.js": [],
+      "npm:@angular-devkit/build-angular": [],
+      "npm:@angular/cli": [],
+      "npm:@angular/compiler-cli": [],
+      "npm:@angular/language-service": [],
+      "npm:@nestjs/schematics": [],
+      "npm:@nestjs/testing": [],
+      "npm:@nrwl/angular": [],
+      "npm:@nrwl/cypress": [],
+      "npm:@nrwl/jest": [],
+      "npm:@nrwl/nest": [],
+      "npm:@nrwl/node": [],
+      "npm:@nrwl/workspace": [],
+      "npm:@types/jest": [],
+      "npm:@types/node": [],
+      "npm:@types/socket.io": [],
+      "npm:angular-cli-ghpages": [],
+      "npm:codelyzer": [],
+      "npm:cypress": [],
+      "npm:dotenv": [],
+      "npm:eslint": [],
+      "npm:jest": [],
+      "npm:jest-preset-angular": [],
+      "npm:prettier": [],
+      "npm:ts-jest": [],
+      "npm:ts-node": [],
+      "npm:tslib": [],
+      "npm:tslint": [],
+      "npm:typescript": []
+    }
+  },
+  "fileMap": {
+    "maha-showroom-e2e": [
+      {
+        "file": "apps/maha-showroom-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1594423566052.8582
+      },
+      {
+        "file": "apps/maha-showroom-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1594423566053.0947
+      },
+      {
+        "file": "apps/maha-showroom-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566053.3423
+      },
+      {
+        "file": "apps/maha-showroom-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1594423566053.632
+      },
+      {
+        "file": "apps/maha-showroom-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1594423566053.8635
+      },
+      {
+        "file": "apps/maha-showroom-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1594423566054.0828
+      },
+      {
+        "file": "apps/maha-showroom-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1594423566054.2036
+      },
+      {
+        "file": "apps/maha-showroom-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1594423566054.3157
+      },
+      {
+        "file": "apps/maha-showroom-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1594423566054.4172
+      },
+      {
+        "file": "apps/maha-showroom-e2e/tslint.json",
+        "ext": ".json",
+        "mtime": 1594423566054.5557
+      }
+    ],
+    "maha-showroom-api": [
+      {
+        "file": "apps/maha-showroom-api/jest.config.js",
+        "ext": ".js",
+        "mtime": 1594423937039.4854
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/.gitkeep",
+        "ext": "",
+        "mtime": 1594423937040.7986
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/app.controller.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423937040.9768
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/app.controller.ts",
+        "ext": ".ts",
+        "mtime": 1594423937041.1445
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1594423937041.3132
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/app.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423937041.5583
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/app.service.ts",
+        "ext": ".ts",
+        "mtime": 1594423937041.7253
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/data/products-mock.json",
+        "ext": ".json",
+        "mtime": 1594423937042.1663
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/db-mongo-config.ts",
+        "ext": ".ts",
+        "mtime": 1594423937041.8887
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/models/user.model.ts",
+        "ext": ".ts",
+        "mtime": 1594423937042.4211
+      },
+      {
+        "file": "apps/maha-showroom-api/src/app/websockets/ws-controller.service.ts",
+        "ext": ".ts",
+        "mtime": 1594423937042.6616
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1594423937042.8328
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/beige+knit+cardigan+13.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937043.7703
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/black+backless+top+6.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937044.2903
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/black+crossover+knit+4.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937044.8271
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/black+linen+skirt+21.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937045.348
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/black+linen+skirt+9.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937045.959
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/black+silk+trousers+17.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937046.4214
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/black+silk+wrap+top+16.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937047.0054
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/brown+skirt+suit+13.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937047.7532
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/brown+velvet+top+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937048.5671
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/camel+leather+pantsuit+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937049.0925
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/champagne+silk+set+18.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937049.6077
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/comme+des+garcons+velvet+top+17.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937050.1895
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/copper+beaded+set+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937051.1226
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/cream+laced+jacket+2.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937051.8228
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/cream+slip+top+12.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937052.4836
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/donna+karan+3+piece+suit+11.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937053.1262
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/embellished+top+and+max+mara+pant+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937053.7654
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/fur+coat+25.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937054.6606
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/giorgio+armani+shorts+15.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937055.5928
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/gold+dries+blouse+18.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937055.9822
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/gold+metallic+sweater+2.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937057.5227
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/ivory+duster+and+pleated+trouser+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937057.9983
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/ivory+silk+tank+3.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937058.3313
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/linen+mini+dress+3.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937058.662
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/metallic+striped+button+down+3.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937058.987
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/peach+pleated+trousers+5.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937059.2722
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/polka+dot+blouse+12.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937059.6604
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/satin+slip+dress+18.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937060.539
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+dark+blue+duster+27.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937060.8555
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+lace+gown+11.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937061.1519
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+max+mara+blazer+10.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937061.7942
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+pale+yellow+top+19.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937062.3423
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+ruched+blouse+19.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937062.8975
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/sheer+sleeved+suit+2.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937063.5571
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+armani+trousers+2.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937064.274
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+button+down+4.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937064.8345
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+knit+tee+3.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937065.4158
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/silk+mandarin+jacket+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937066.1255
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/slate+grey+giorgio+armani+suit+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937069.3928
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/sleeveless+linen+suit+4.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937070.4158
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/velvet+skirt+suit+3.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937071.2395
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/vest+9.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937071.6438
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/white+embroidered+blouse+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937072.038
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/white+lace+set+9.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937072.3958
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/white+skirt+suit+23.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937073.1074
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/white+tucked+blouse+13.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937073.4487
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/white+wrap+top+1.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937074.2256
+      },
+      {
+        "file": "apps/maha-showroom-api/src/assets/michaela_images/yeon+trench+11.jpg",
+        "ext": ".jpg",
+        "mtime": 1594423937075.6753
+      },
+      {
+        "file": "apps/maha-showroom-api/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1594423937076.0264
+      },
+      {
+        "file": "apps/maha-showroom-api/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1594423937076.2048
+      },
+      {
+        "file": "apps/maha-showroom-api/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1594423937040.5476
+      },
+      {
+        "file": "apps/maha-showroom-api/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1594423937039.7156
+      },
+      {
+        "file": "apps/maha-showroom-api/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1594423937039.8813
+      },
+      {
+        "file": "apps/maha-showroom-api/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1594423937040.0854
+      },
+      {
+        "file": "apps/maha-showroom-api/tslint.json",
+        "ext": ".json",
+        "mtime": 1594423937040.2703
+      }
+    ],
+    "api-interfaces": [
+      {
+        "file": "libs/api-interfaces/README.md",
+        "ext": ".md",
+        "mtime": 1594423566068.8254
+      },
+      {
+        "file": "libs/api-interfaces/jest.config.js",
+        "ext": ".js",
+        "mtime": 1594423566068.995
+      },
+      {
+        "file": "libs/api-interfaces/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1594423566069.1958
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
+        "ext": ".ts",
+        "mtime": 1594423566069.4048
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1594423566069.538
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1594423566069.6677
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1594423566069.821
+      },
+      {
+        "file": "libs/api-interfaces/tslint.json",
+        "ext": ".json",
+        "mtime": 1594423566070.0254
+      }
+    ],
+    "maha-showroom": [
+      {
+        "file": "apps/maha-showroom/browserslist",
+        "ext": "",
+        "mtime": 1594423566054.7996
+      },
+      {
+        "file": "apps/maha-showroom/jest.config.js",
+        "ext": ".js",
+        "mtime": 1594423566054.9797
+      },
+      {
+        "file": "apps/maha-showroom/proxy.conf.json",
+        "ext": ".json",
+        "mtime": 1594423566055.1072
+      },
+      {
+        "file": "apps/maha-showroom/src/app/address-form/address-form.component.css",
+        "ext": ".css",
+        "mtime": 1594423566055.3862
+      },
+      {
+        "file": "apps/maha-showroom/src/app/address-form/address-form.component.html",
+        "ext": ".html",
+        "mtime": 1594423566055.5405
+      },
+      {
+        "file": "apps/maha-showroom/src/app/address-form/address-form.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566055.8115
+      },
+      {
+        "file": "apps/maha-showroom/src/app/address-form/address-form.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566056.052
+      },
+      {
+        "file": "apps/maha-showroom/src/app/app-routing.module.ts",
+        "ext": ".ts",
+        "mtime": 1594423566056.3267
+      },
+      {
+        "file": "apps/maha-showroom/src/app/app.component.html",
+        "ext": ".html",
+        "mtime": 1594423566056.538
+      },
+      {
+        "file": "apps/maha-showroom/src/app/app.component.scss",
+        "ext": ".scss",
+        "mtime": 1594423566056.6143
+      },
+      {
+        "file": "apps/maha-showroom/src/app/app.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566057.284
+      },
+      {
+        "file": "apps/maha-showroom/src/app/app.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566057.821
+      },
+      {
+        "file": "apps/maha-showroom/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1594423566058.09
+      },
+      {
+        "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.css",
+        "ext": ".css",
+        "mtime": 1594423566058.2937
+      },
+      {
+        "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.html",
+        "ext": ".html",
+        "mtime": 1594423566058.4387
+      },
+      {
+        "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566058.6587
+      },
+      {
+        "file": "apps/maha-showroom/src/app/dashboard/dashboard.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566058.8882
+      },
+      {
+        "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.css",
+        "ext": ".css",
+        "mtime": 1594423566059.1284
+      },
+      {
+        "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.html",
+        "ext": ".html",
+        "mtime": 1594423566059.3247
+      },
+      {
+        "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566059.575
+      },
+      {
+        "file": "apps/maha-showroom/src/app/drag-drop/drag-drop.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566059.8264
+      },
+      {
+        "file": "apps/maha-showroom/src/app/layout/layout.component.html",
+        "ext": ".html",
+        "mtime": 1594423566060.1958
+      },
+      {
+        "file": "apps/maha-showroom/src/app/layout/layout.component.scss",
+        "ext": ".scss",
+        "mtime": 1594423566060.3933
+      },
+      {
+        "file": "apps/maha-showroom/src/app/layout/layout.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566060.7668
+      },
+      {
+        "file": "apps/maha-showroom/src/app/layout/layout.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566061.0288
+      },
+      {
+        "file": "apps/maha-showroom/src/app/navigation/navigation.component.css",
+        "ext": ".css",
+        "mtime": 1594423566061.352
+      },
+      {
+        "file": "apps/maha-showroom/src/app/navigation/navigation.component.html",
+        "ext": ".html",
+        "mtime": 1594423566061.5762
+      },
+      {
+        "file": "apps/maha-showroom/src/app/navigation/navigation.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566061.8223
+      },
+      {
+        "file": "apps/maha-showroom/src/app/navigation/navigation.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566062.0508
+      },
+      {
+        "file": "apps/maha-showroom/src/app/palette/palette.component.html",
+        "ext": ".html",
+        "mtime": 1594423566062.3315
+      },
+      {
+        "file": "apps/maha-showroom/src/app/palette/palette.component.scss",
+        "ext": ".scss",
+        "mtime": 1594423566062.4734
+      },
+      {
+        "file": "apps/maha-showroom/src/app/palette/palette.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566062.7048
+      },
+      {
+        "file": "apps/maha-showroom/src/app/palette/palette.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566062.9172
+      },
+      {
+        "file": "apps/maha-showroom/src/app/products/products.component.html",
+        "ext": ".html",
+        "mtime": 1594423566063.155
+      },
+      {
+        "file": "apps/maha-showroom/src/app/products/products.component.scss",
+        "ext": ".scss",
+        "mtime": 1594423566063.2883
+      },
+      {
+        "file": "apps/maha-showroom/src/app/products/products.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566063.4905
+      },
+      {
+        "file": "apps/maha-showroom/src/app/products/products.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566063.6694
+      },
+      {
+        "file": "apps/maha-showroom/src/app/services/theme.service.ts",
+        "ext": ".ts",
+        "mtime": 1594423566063.9392
+      },
+      {
+        "file": "apps/maha-showroom/src/app/table/table-datasource.ts",
+        "ext": ".ts",
+        "mtime": 1594423566064.2227
+      },
+      {
+        "file": "apps/maha-showroom/src/app/table/table.component.css",
+        "ext": ".css",
+        "mtime": 1594423566064.358
+      },
+      {
+        "file": "apps/maha-showroom/src/app/table/table.component.html",
+        "ext": ".html",
+        "mtime": 1594423566064.5952
+      },
+      {
+        "file": "apps/maha-showroom/src/app/table/table.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566064.9172
+      },
+      {
+        "file": "apps/maha-showroom/src/app/table/table.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566065.1562
+      },
+      {
+        "file": "apps/maha-showroom/src/app/tree/example-data.ts",
+        "ext": ".ts",
+        "mtime": 1594423566065.4402
+      },
+      {
+        "file": "apps/maha-showroom/src/app/tree/tree.component.css",
+        "ext": ".css",
+        "mtime": 1594423566065.5667
+      },
+      {
+        "file": "apps/maha-showroom/src/app/tree/tree.component.html",
+        "ext": ".html",
+        "mtime": 1594423566065.702
+      },
+      {
+        "file": "apps/maha-showroom/src/app/tree/tree.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566065.9216
+      },
+      {
+        "file": "apps/maha-showroom/src/app/tree/tree.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566066.1511
+      },
+      {
+        "file": "apps/maha-showroom/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1594423566066.341
+      },
+      {
+        "file": "apps/maha-showroom/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1594423566066.5698
+      },
+      {
+        "file": "apps/maha-showroom/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1594423566066.7244
+      },
+      {
+        "file": "apps/maha-showroom/src/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1594423566066.9116
+      },
+      {
+        "file": "apps/maha-showroom/src/index.html",
+        "ext": ".html",
+        "mtime": 1594423566067.0518
+      },
+      {
+        "file": "apps/maha-showroom/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1594423566067.1968
+      },
+      {
+        "file": "apps/maha-showroom/src/polyfills.ts",
+        "ext": ".ts",
+        "mtime": 1594424988452.7712
+      },
+      {
+        "file": "apps/maha-showroom/src/styles.scss",
+        "ext": ".scss",
+        "mtime": 1594423566067.6213
+      },
+      {
+        "file": "apps/maha-showroom/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1594424939511.0654
+      },
+      {
+        "file": "apps/maha-showroom/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1594423566067.8787
+      },
+      {
+        "file": "apps/maha-showroom/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1594423566067.9875
+      },
+      {
+        "file": "apps/maha-showroom/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1594423566068.1
+      },
+      {
+        "file": "apps/maha-showroom/tslint.json",
+        "ext": ".json",
+        "mtime": 1594423566068.2134
+      }
+    ],
+    "ipoop-e2e": [
+      {
+        "file": "apps/ipoop-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1594423566045.831
+      },
+      {
+        "file": "apps/ipoop-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1594423566046.0535
+      },
+      {
+        "file": "apps/ipoop-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566046.273
+      },
+      {
+        "file": "apps/ipoop-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1594423566046.5884
+      },
+      {
+        "file": "apps/ipoop-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1594423566046.798
+      },
+      {
+        "file": "apps/ipoop-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1594423566047.424
+      },
+      {
+        "file": "apps/ipoop-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1594423566047.6213
+      },
+      {
+        "file": "apps/ipoop-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1594423566047.7861
+      },
+      {
+        "file": "apps/ipoop-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1594423566048.002
+      },
+      {
+        "file": "apps/ipoop-e2e/tslint.json",
+        "ext": ".json",
+        "mtime": 1594423566048.1863
+      }
+    ],
+    "ipoop-api": [
+      {
+        "file": "apps/ipoop-api/jest.config.js",
+        "ext": ".js",
+        "mtime": 1594424496653.3843
+      },
+      {
+        "file": "apps/ipoop-api/src/app/.gitkeep",
+        "ext": "",
+        "mtime": 1594424496652.5454
+      },
+      {
+        "file": "apps/ipoop-api/src/app/app.controller.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594424496653.9976
+      },
+      {
+        "file": "apps/ipoop-api/src/app/app.controller.ts",
+        "ext": ".ts",
+        "mtime": 1594424496654.1616
+      },
+      {
+        "file": "apps/ipoop-api/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1594424496654.3303
+      },
+      {
+        "file": "apps/ipoop-api/src/app/app.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594424496654.6084
+      },
+      {
+        "file": "apps/ipoop-api/src/app/app.service.ts",
+        "ext": ".ts",
+        "mtime": 1594424496654.884
+      },
+      {
+        "file": "apps/ipoop-api/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1594424496652.7185
+      },
+      {
+        "file": "apps/ipoop-api/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1594424496652.9573
+      },
+      {
+        "file": "apps/ipoop-api/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1594424496653.175
+      },
+      {
+        "file": "apps/ipoop-api/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1594424496652.287
+      },
+      {
+        "file": "apps/ipoop-api/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1594424496651.802
+      },
+      {
+        "file": "apps/ipoop-api/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1594424496652.0286
+      },
+      {
+        "file": "apps/ipoop-api/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1594424496653.6008
+      },
+      {
+        "file": "apps/ipoop-api/tslint.json",
+        "ext": ".json",
+        "mtime": 1594424496651.5388
+      }
+    ],
+    "ipoop": [
+      {
+        "file": "apps/ipoop/browserslist",
+        "ext": "",
+        "mtime": 1594423566048.4717
+      },
+      {
+        "file": "apps/ipoop/jest.config.js",
+        "ext": ".js",
+        "mtime": 1594423566048.7517
+      },
+      {
+        "file": "apps/ipoop/proxy.conf.json",
+        "ext": ".json",
+        "mtime": 1594424496653.8242
+      },
+      {
+        "file": "apps/ipoop/src/app/app.component.html",
+        "ext": ".html",
+        "mtime": 1594423566049.2493
+      },
+      {
+        "file": "apps/ipoop/src/app/app.component.scss",
+        "ext": ".scss",
+        "mtime": 1594423566049.4463
+      },
+      {
+        "file": "apps/ipoop/src/app/app.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1594423566049.6543
+      },
+      {
+        "file": "apps/ipoop/src/app/app.component.ts",
+        "ext": ".ts",
+        "mtime": 1594423566049.8901
+      },
+      {
+        "file": "apps/ipoop/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1594423566050.1174
+      },
+      {
+        "file": "apps/ipoop/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1594423566050.269
+      },
+      {
+        "file": "apps/ipoop/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1594423566050.5085
+      },
+      {
+        "file": "apps/ipoop/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1594423566050.6765
+      },
+      {
+        "file": "apps/ipoop/src/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1594423566050.9429
+      },
+      {
+        "file": "apps/ipoop/src/index.html",
+        "ext": ".html",
+        "mtime": 1594423566051.2207
+      },
+      {
+        "file": "apps/ipoop/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1594423566051.4705
+      },
+      {
+        "file": "apps/ipoop/src/polyfills.ts",
+        "ext": ".ts",
+        "mtime": 1594423566051.617
+      },
+      {
+        "file": "apps/ipoop/src/styles.scss",
+        "ext": ".scss",
+        "mtime": 1594423566051.7764
+      },
+      {
+        "file": "apps/ipoop/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1594423566051.915
+      },
+      {
+        "file": "apps/ipoop/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1594423566052.123
+      },
+      {
+        "file": "apps/ipoop/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1594423566052.2969
+      },
+      {
+        "file": "apps/ipoop/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1594423566052.4556
+      },
+      {
+        "file": "apps/ipoop/tslint.json",
+        "ext": ".json",
+        "mtime": 1594423566052.6216
+      }
+    ]
+  }
+}

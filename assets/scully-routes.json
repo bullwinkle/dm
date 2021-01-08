@@ -1,1 +1,7 @@
-[{"route":"/"},{"route":"/products"}]
+[
+  {
+    "route": "/"
+  }, {
+  "route": "/products"
+}
+]
